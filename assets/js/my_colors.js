@@ -1,6 +1,6 @@
-fav_colors_code = JSON.parse(localStorage.getItem("fav_colors_code"));
 
 window.onload = () =>{
+  fav_colors_code = JSON.parse(localStorage.getItem("fav_colors_code"));
     var html = "";
     var empty_colors_card = ""
     if (fav_colors_code.length == 0 ||fav_colors_code == null) {

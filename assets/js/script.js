@@ -9,6 +9,7 @@ function randomcolor() {
 
 window.onload = () => {
   randomcolor();
+  localStorage.setItem("fav_colors_code", JSON.stringify(fav_colors_code));
 };
 
 window.onkeydown = (e) => {
@@ -30,7 +31,7 @@ copy_code_btn.forEach((element, index) => {
         .writeText(hexacode)
         .then(function () {
           // alert(hexacode);
-          showToast('Copy to clipboard ' +hexacode)
+          showToast('Copy to clipboard ' + hexacode)
         })
         .catch(function () {
           alert("error");
@@ -39,29 +40,26 @@ copy_code_btn.forEach((element, index) => {
   });
 });
 
+
+
 var fav_colors_code = [];
 var stored_colors = [];
 var fav_colors = document.querySelectorAll(".fav_coolor_code");
 
 fav_colors.forEach((element, index) => {
   element.addEventListener("click", function (event) {
-    var fav_colors_arrays = color_code_text[index].innerText;
-    if (fav_colors_code.includes(fav_colors_arrays)) {
-      // alert("you are allready to add this color");
-      showToast("you are allready to add this color")
-    } else {
-      
-      if(localStorage.getItem("fav_colors_code") == null){
-        fav_colors_code = JSON.parse(localStorage.getItem("fav_colors_code"))
-        // console.log("first color");
-        // showToast()
-      }else{
-        fav_colors_code.push(fav_colors_arrays);
-        showToast("color added successfully " + fav_colors_arrays)
-        localStorage.setItem("fav_colors_code", JSON.stringify(fav_colors_code));
-      }
-      
-      
+      var fav_colors_arrays = color_code_text[index].innerText;
+      if (fav_colors_code.includes(fav_colors_arrays)) {
+        showToast("you are allready to add this color")
+      } else {
+
+        if(localStorage.getItem("fav_colors_code") == null){
+          fav_colors_code = JSON.parse(localStorage.getItem("fav_colors_code"))
+        }else{
+          fav_colors_code.push(fav_colors_arrays);
+          showToast("color added successfully " + fav_colors_arrays)
+          localStorage.setItem("fav_colors_code", JSON.stringify(fav_colors_code));
+        }
     }
   });
 });
