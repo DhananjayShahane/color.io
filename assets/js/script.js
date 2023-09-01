@@ -40,10 +40,7 @@ copy_code_btn.forEach((element, index) => {
   });
 });
 
-
-
 var fav_colors_code = [];
-var stored_colors = [];
 var fav_colors = document.querySelectorAll(".fav_coolor_code");
 
 fav_colors.forEach((element, index) => {
@@ -97,8 +94,4 @@ function removeToast(toast) {
   toast.remove();
 }
 
-function getColors(){
-  window.location = "../my_colors/my_colors.html";
-  JSON.parse(localStorage.getItem("fav_colors_code"));
-}
 

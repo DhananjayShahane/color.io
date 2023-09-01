@@ -100,7 +100,3 @@ function createToast() {
   function removeToast(toast) {
     toast.remove();
   }
-  function getColors(){
-    window.location = "../my_colors/home.html";
-    JSON.parse(localStorage.getItem("fav_colors_code"));
-  }

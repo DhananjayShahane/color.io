@@ -1,25 +1,10 @@
-
-  @media (max-width: 896px) {
-    .fav_card {
-        width: 312px;
-        height: 200px;
-    }
-    #fav_add_colors {
-        flex-wrap: wrap;
-        overflow: scroll;
-        height: auto;
-        max-height: 500px;
-    }
-
-  }
-
-
 /* toater */
 #toast{
     display: none;
-    position: absolute;
+    position:absolute;
     top: 25px;
-    left: 49%;
+    left: 40%;
+    width: 200px;
     padding: 10px;
     font-size: 11px;
     border-radius: 3px;
@@ -45,20 +30,20 @@
 
 @keyframes showToast{
   from{
-    top: 170px;
+    top: 50px;
     opacity: 0;
   } to {
-    top: 100px;
+    top: 50px;
     opacity: 1;
   }
 }
 
 @keyframes hideToast{
   from{
-    top: 100px;    
+    top: 50px;    
     opacity: 1;
   } to {
-    top: 20px;
+    top: 50px;
     opacity: 0;
   }
 }
